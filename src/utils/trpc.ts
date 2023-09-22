@@ -29,7 +29,8 @@ function getBaseUrl() {
  * @link https://trpc.io/docs/react#3-create-trpc-hooks
  */
 export const trpc = createTRPCNext<AppRouter>({
-  config() {
+  config({ ctx }) {
+    console.log("ctx:", ctx)
     /**
      * If you want to use SSR, you need to use the server's full URL
      * @link https://trpc.io/docs/ssr
