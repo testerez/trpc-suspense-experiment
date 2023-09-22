@@ -30,7 +30,7 @@ function getBaseUrl() {
  */
 export const trpc = createTRPCNext<AppRouter>({
   config({ ctx }) {
-    console.log("ctx:", ctx)
+    console.log("ctx:", ctx) // ctx should not be undefined on SSR but it's undefined
     /**
      * If you want to use SSR, you need to use the server's full URL
      * @link https://trpc.io/docs/ssr
