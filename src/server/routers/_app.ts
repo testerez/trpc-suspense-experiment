@@ -1,13 +1,8 @@
-import { baseProcedure, router } from '../trpc';
-import { todoRouter } from './todo';
+import { baseProcedure, router } from "../trpc"
+import { testRouter } from "./test"
 
 export const appRouter = router({
-  todo: todoRouter,
+  test: testRouter,
+})
 
-  i18n: baseProcedure.query(({ ctx }) => ({
-    i18n: ctx.i18n,
-    locale: ctx.locale,
-  })),
-});
-
-export type AppRouter = typeof appRouter;
+export type AppRouter = typeof appRouter
